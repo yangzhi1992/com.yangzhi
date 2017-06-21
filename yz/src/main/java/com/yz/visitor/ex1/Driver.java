@@ -1,4 +1,4 @@
-package com.yz.visitor;
+package com.yz.visitor.ex1;
 public class Driver implements CarElementVisitor{
 	public void visit(Wheel wheel) {
 		System.out.println("Rolling " + wheel.getName()); 

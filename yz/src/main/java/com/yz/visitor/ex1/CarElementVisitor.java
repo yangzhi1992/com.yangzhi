@@ -1,4 +1,4 @@
-package com.yz.visitor;
+package com.yz.visitor.ex1;
 /**
  * 每个CarElement的实现类均通过accept()的方法来回调visitor并访问自身。
  * 接下来即可定义一个visitor类，比如Driver。为了使得visitor具有可扩展可延续性，可以将Driver抽象出一个接口

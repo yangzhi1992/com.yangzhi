@@ -1,4 +1,4 @@
-package com.yz.visitor;
+package com.yz.visitor.ex1;
 public class Car implements CarElement{
 	CarElement[] elements;
 	public CarElement[] getElements(){

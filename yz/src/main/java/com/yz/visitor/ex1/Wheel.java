@@ -1,4 +1,4 @@
-package com.yz.visitor;
+package com.yz.visitor.ex1;
 public class Wheel implements CarElement{
 	private String name;
 	Wheel(String name){
