@@ -1,4 +1,4 @@
-package com.yz.visitor.ex2;
+package com.yz.designpattern.visitor.ex2;
 public class StringElement implements Visitable{
 	private String value;
 	public StringElement(String string) {

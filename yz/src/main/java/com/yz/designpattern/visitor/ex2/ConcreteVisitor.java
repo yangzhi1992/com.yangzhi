@@ -1,4 +1,4 @@
-package com.yz.visitor.ex2;
+package com.yz.designpattern.visitor.ex2;
 
 import java.util.Iterator;
 import java.util.List;

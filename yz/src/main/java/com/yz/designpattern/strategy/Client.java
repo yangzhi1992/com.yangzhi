@@ -1,4 +1,4 @@
-package com.yz.designpattern;
+package com.yz.designpattern.strategy;
 public class Client {
     public static void main(String[] args) {
         //选择并创建需要使用的策略对象

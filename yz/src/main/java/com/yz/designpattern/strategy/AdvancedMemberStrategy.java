@@ -1,4 +1,4 @@
-package com.yz.designpattern;
+package com.yz.designpattern.strategy;
 public class AdvancedMemberStrategy implements MemberStrategy {
     public double calcPrice(double booksPrice) {
         System.out.println("对于高级会员的折扣为20%");

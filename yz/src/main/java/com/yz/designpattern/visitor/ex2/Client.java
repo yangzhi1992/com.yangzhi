@@ -1,4 +1,4 @@
-package com.yz.visitor.ex2;
+package com.yz.designpattern.visitor.ex2;
 
 import java.util.ArrayList;
 import java.util.List;

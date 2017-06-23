@@ -1,4 +1,4 @@
-package com.yz.designpattern;
+package com.yz.designpattern.strategy;
 public interface MemberStrategy {
     /**
      * 计算图书的价格

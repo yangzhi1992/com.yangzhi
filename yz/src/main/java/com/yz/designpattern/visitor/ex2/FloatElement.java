@@ -1,4 +1,4 @@
-package com.yz.visitor.ex2;
+package com.yz.designpattern.visitor.ex2;
 public class FloatElement implements Visitable{
 	private Float value;
 	public FloatElement(Float value) {

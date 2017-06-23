@@ -1,4 +1,4 @@
-package com.yz.designpattern;
+package com.yz.designpattern.strategy;
 public class Price {
     //持有一个具体的策略对象
     private MemberStrategy strategy;
