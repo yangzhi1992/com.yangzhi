@@ -1,17 +1,17 @@
-package com.yz.并发编程;
+/*package com.yz.并发编程;
 
 import java.math.BigInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
 
 
-/**
+*//**
  * UnsafeCachingFactorizer
  *
  * Servlet that attempts to cache its last result without adequate atomicity
  *
  * @author Brian Goetz and Tim Peierls
- */
+ *//*
 
 
 public class UnsafeCachingFactorizer extends GenericServlet implements Servlet {
@@ -45,3 +45,4 @@ public class UnsafeCachingFactorizer extends GenericServlet implements Servlet {
     }
 }
 
+*/

@@ -1,4 +1,4 @@
-package com.yz.并发编程;
+/*package com.yz.并发编程;
 
 import java.math.BigInteger;
 import java.util.concurrent.atomic.*;
@@ -6,13 +6,13 @@ import javax.servlet.*;
 
 
 
-/**
+*//**
  * CountingFactorizer
  *
  * Servlet that counts requests using AtomicLong
  *
  * @author Brian Goetz and Tim Peierls
- */
+ *//*
 
 public class CountingFactorizer extends GenericServlet implements Servlet {
     private final AtomicLong count = new AtomicLong(0);
@@ -30,3 +30,4 @@ public class CountingFactorizer extends GenericServlet implements Servlet {
     BigInteger extractFromRequest(ServletRequest req) {return null; }
     BigInteger[] factor(BigInteger i) { return null; }
 }
+*/

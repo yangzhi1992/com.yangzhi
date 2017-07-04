@@ -1,17 +1,17 @@
-package com.yz.并发编程;
+/*package com.yz.并发编程;
 
 import java.math.BigInteger;
 import javax.servlet.*;
 
 
 
-/**
+*//**
  * VolatileCachedFactorizer
  * <p/>
  * Caching the last result using a volatile reference to an immutable holder object
  *
  * @author Brian Goetz and Tim Peierls
- */
+ *//*
 
 public class VolatileCachedFactorizer extends GenericServlet implements Servlet {
     private volatile OneValueCache cache = new OneValueCache(null, null);
@@ -39,3 +39,4 @@ public class VolatileCachedFactorizer extends GenericServlet implements Servlet 
     }
 }
 
+*/

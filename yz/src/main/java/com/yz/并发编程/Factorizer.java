@@ -1,17 +1,17 @@
-package com.yz.并发编程;
+/*package com.yz.并发编程;
 
 import java.math.BigInteger;
 import javax.servlet.*;
 
 
 
-/**
+*//**
  * Factorizer
  * <p/>
  * Factorizing servlet that caches results using Memoizer
  *
  * @author Brian Goetz and Tim Peierls
- */
+ *//*
 
 public class Factorizer extends GenericServlet implements Servlet {
     private final Computable<BigInteger, BigInteger[]> c =
@@ -48,3 +48,4 @@ public class Factorizer extends GenericServlet implements Servlet {
         return new BigInteger[]{i};
     }
 }
+*/

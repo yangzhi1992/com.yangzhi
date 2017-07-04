@@ -1,17 +1,17 @@
-package com.yz.并发编程;
+/*package com.yz.并发编程;
 
 import java.math.BigInteger;
 import javax.servlet.*;
 
 
 
-/**
+*//**
  * SynchronizedFactorizer
  *
  * Servlet that caches last result, but with unnacceptably poor concurrency
  *
  * @author Brian Goetz and Tim Peierls
- */
+ *//*
 
 
 public class SynchronizedFactorizer extends GenericServlet implements Servlet {
@@ -44,3 +44,4 @@ public class SynchronizedFactorizer extends GenericServlet implements Servlet {
     }
 }
 
+*/

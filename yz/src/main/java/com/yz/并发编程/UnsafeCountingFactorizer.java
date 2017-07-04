@@ -1,17 +1,17 @@
-package com.yz.并发编程;
+/*package com.yz.并发编程;
 
 import java.math.BigInteger;
 import javax.servlet.*;
 
 
 
-/**
+*//**
  * UnsafeCountingFactorizer
  *
  * Servlet that counts requests without the necessary synchronization
  *
  * @author Brian Goetz and Tim Peierls
- */
+ *//*
 
 public class UnsafeCountingFactorizer extends GenericServlet implements Servlet {
     private long count = 0;
@@ -39,3 +39,4 @@ public class UnsafeCountingFactorizer extends GenericServlet implements Servlet 
         return new BigInteger[] { i };
     }
 }
+*/
