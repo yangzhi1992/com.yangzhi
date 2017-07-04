@@ -11,9 +11,9 @@ import java.util.concurrent.atomic.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@ThreadSafe
         public class CasNumberRange {
-    
+    @Immutable
             private static class IntPair {
         // INVARIANT: lower <= upper
         final int lower;

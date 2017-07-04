@@ -12,9 +12,9 @@ import java.util.regex.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@ThreadSafe
 public class BetterAttributeStore {
-    private final Map<String, String>
+    @GuardedBy("this") private final Map<String, String>
             attributes = new HashMap<String, String>();
 
     public boolean userLocationMatches(String name, String regexp) {

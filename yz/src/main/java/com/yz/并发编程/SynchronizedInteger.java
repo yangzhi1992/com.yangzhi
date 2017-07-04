@@ -9,9 +9,9 @@ package com.yz.并发编程;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@ThreadSafe
 public class SynchronizedInteger {
-    private int value;
+    @GuardedBy("this") private int value;
 
     public synchronized int get() {
         return value;

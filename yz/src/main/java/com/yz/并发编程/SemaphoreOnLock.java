@@ -12,12 +12,12 @@ import java.util.concurrent.locks.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@ThreadSafe
 public class SemaphoreOnLock {
     private final Lock lock = new ReentrantLock();
     // CONDITION PREDICATE: permitsAvailable (permits > 0)
     private final Condition permitsAvailable = lock.newCondition();
-    private int permits;
+    @GuardedBy("lock") private int permits;
 
     SemaphoreOnLock(int initialPermits) {
         lock.lock();

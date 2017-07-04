@@ -9,7 +9,7 @@ package com.yz.并发编程;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@NotThreadSafe
 public class DoubleCheckedLocking {
     private static Resource resource;
 

@@ -11,7 +11,7 @@ import java.util.concurrent.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@ThreadSafe
 public class BoundedExecutor {
     private final Executor exec;
     private final Semaphore semaphore;

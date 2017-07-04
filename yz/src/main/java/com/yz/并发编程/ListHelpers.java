@@ -13,7 +13,7 @@ import java.util.*;
  * @author Brian Goetz and Tim Peierls
  */
 
-
+@NotThreadSafe
 class BadListHelper <E> {
     public List<E> list = Collections.synchronizedList(new ArrayList<E>());
 
@@ -25,7 +25,7 @@ class BadListHelper <E> {
     }
 }
 
-
+@ThreadSafe
 class GoodListHelper <E> {
     public List<E> list = Collections.synchronizedList(new ArrayList<E>());
 

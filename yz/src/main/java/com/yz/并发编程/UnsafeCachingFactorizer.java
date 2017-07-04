@@ -1,7 +1,8 @@
 /*package com.yz.并发编程;
 
 import java.math.BigInteger;
-import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.atomic.*;
+import javax.servlet.*;
 
 
 
@@ -13,7 +14,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * @author Brian Goetz and Tim Peierls
  *//*
 
-
+@NotThreadSafe
 public class UnsafeCachingFactorizer extends GenericServlet implements Servlet {
     private final AtomicReference<BigInteger> lastNumber
             = new AtomicReference<BigInteger>();

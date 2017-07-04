@@ -9,7 +9,7 @@ package com.yz.并发编程;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@ThreadSafe
         public class BoundedBuffer <V> extends BaseBoundedBuffer<V> {
     // CONDITION PREDICATE: not-full (!isFull())
     // CONDITION PREDICATE: not-empty (!isEmpty())

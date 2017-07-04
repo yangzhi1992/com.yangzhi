@@ -14,7 +14,7 @@ import java.util.*;
 public class CooperatingDeadlock {
     // Warning: deadlock-prone!
     class Taxi {
-        private Point location, destination;
+        @GuardedBy("this") private Point location, destination;
         private final Dispatcher dispatcher;
 
         public Taxi(Dispatcher dispatcher) {
@@ -41,8 +41,8 @@ public class CooperatingDeadlock {
     }
 
     class Dispatcher {
-        private final Set<Taxi> taxis;
-        private final Set<Taxi> availableTaxis;
+        @GuardedBy("this") private final Set<Taxi> taxis;
+        @GuardedBy("this") private final Set<Taxi> availableTaxis;
 
         public Dispatcher() {
             taxis = new HashSet<Taxi>();

@@ -11,7 +11,7 @@ package com.yz.并发编程;
  */
 public class PrivateLock {
     private final Object myLock = new Object();
-    Widget widget;
+    @GuardedBy("myLock") Widget widget;
 
     void someMethod() {
         synchronized (myLock) {

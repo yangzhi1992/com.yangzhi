@@ -11,7 +11,7 @@ import java.util.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@ThreadSafe
 public class SafeStates {
     private final Map<String, String> states;
 

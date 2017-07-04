@@ -7,9 +7,9 @@ package com.yz.并发编程;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@ThreadSafe
 public class SafePoint {
-    private int x, y;
+    @GuardedBy("this") private int x, y;
 
     private SafePoint(int[] a) {
         this(a[0], a[1]);

@@ -13,7 +13,7 @@ import java.util.*;
  * @author Brian Goetz and Tim Peierls
  */
 public class Memoizer1 <A, V> implements Computable<A, V> {
-    private final Map<A, V> cache = new HashMap<A, V>();
+    @GuardedBy("this") private final Map<A, V> cache = new HashMap<A, V>();
     private final Computable<A, V> c;
 
     public Memoizer1(Computable<A, V> c) {

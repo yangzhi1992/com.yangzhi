@@ -11,9 +11,9 @@ import java.util.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@ThreadSafe
  public class MonitorVehicleTracker {
-    private final Map<String, MutablePoint> locations;
+    @GuardedBy("this") private final Map<String, MutablePoint> locations;
 
     public MonitorVehicleTracker(Map<String, MutablePoint> locations) {
         this.locations = deepCopy(locations);

@@ -12,7 +12,7 @@ import javax.servlet.*;
  *
  * @author Brian Goetz and Tim Peierls
  *//*
-
+@ThreadSafe
 public class Factorizer extends GenericServlet implements Servlet {
     private final Computable<BigInteger, BigInteger[]> c =
             new Computable<BigInteger, BigInteger[]>() {

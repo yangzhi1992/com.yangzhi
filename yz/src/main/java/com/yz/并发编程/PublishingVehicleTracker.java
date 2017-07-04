@@ -12,7 +12,7 @@ import java.util.concurrent.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@ThreadSafe
 public class PublishingVehicleTracker {
     private final Map<String, SafePoint> locations;
     private final Map<String, SafePoint> unmodifiableMap;

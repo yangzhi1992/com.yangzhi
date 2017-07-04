@@ -13,10 +13,10 @@ import javax.servlet.*;
  * @author Brian Goetz and Tim Peierls
  *//*
 
-
+@ThreadSafe
 public class SynchronizedFactorizer extends GenericServlet implements Servlet {
-    private BigInteger lastNumber;
-    private BigInteger[] lastFactors;
+    @GuardedBy("this") private BigInteger lastNumber;
+    @GuardedBy("this") private BigInteger[] lastFactors;
 
     public synchronized void service(ServletRequest req,
                                      ServletResponse resp) {

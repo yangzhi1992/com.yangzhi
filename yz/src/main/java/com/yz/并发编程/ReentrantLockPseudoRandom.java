@@ -11,7 +11,7 @@ import java.util.concurrent.locks.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@ThreadSafe
 public class ReentrantLockPseudoRandom extends PseudoRandom {
     private final Lock lock = new ReentrantLock(false);
     private int seed;

@@ -15,7 +15,7 @@ import java.util.concurrent.*;
  */
 
 public abstract class SocketUsingTask <T> implements CancellableTask<T> {
-    private Socket socket;
+    @GuardedBy("this") private Socket socket;
 
     protected synchronized void setSocket(Socket s) {
         socket = s;
@@ -50,7 +50,7 @@ interface CancellableTask <T> extends Callable<T> {
 }
 
 
-
+@ThreadSafe
 class CancellingExecutor extends ThreadPoolExecutor {
     public CancellingExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue) {
         super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue);

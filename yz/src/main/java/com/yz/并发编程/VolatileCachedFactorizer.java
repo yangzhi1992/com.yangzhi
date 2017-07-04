@@ -12,7 +12,7 @@ import javax.servlet.*;
  *
  * @author Brian Goetz and Tim Peierls
  *//*
-
+@ThreadSafe
 public class VolatileCachedFactorizer extends GenericServlet implements Servlet {
     private volatile OneValueCache cache = new OneValueCache(null, null);
 

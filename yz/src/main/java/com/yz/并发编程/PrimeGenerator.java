@@ -14,11 +14,11 @@ import java.util.concurrent.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@ThreadSafe
 public class PrimeGenerator implements Runnable {
     private static ExecutorService exec = Executors.newCachedThreadPool();
 
-    private final List<BigInteger> primes
+    @GuardedBy("this") private final List<BigInteger> primes
             = new ArrayList<BigInteger>();
     private volatile boolean cancelled;
 

@@ -12,7 +12,7 @@ import java.util.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@Immutable
 public class OneValueCache {
     private final BigInteger lastNumber;
     private final BigInteger[] lastFactors;

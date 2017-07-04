@@ -11,7 +11,7 @@ import java.util.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@Immutable
 public class PuzzleNode <P, M> {
     final P pos;
     final M move;

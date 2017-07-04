@@ -13,7 +13,7 @@ import javax.servlet.*;
  *
  * @author Brian Goetz and Tim Peierls
  *//*
-
+@ThreadSafe
 public class CountingFactorizer extends GenericServlet implements Servlet {
     private final AtomicLong count = new AtomicLong(0);
 

@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@ThreadSafe
         public class ConcurrentStack <E> {
     AtomicReference<Node<E>> top = new AtomicReference<Node<E>>();
 

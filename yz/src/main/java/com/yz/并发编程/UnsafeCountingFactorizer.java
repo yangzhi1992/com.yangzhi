@@ -12,7 +12,7 @@ import javax.servlet.*;
  *
  * @author Brian Goetz and Tim Peierls
  *//*
-
+@NotThreadSafe
 public class UnsafeCountingFactorizer extends GenericServlet implements Servlet {
     private long count = 0;
 

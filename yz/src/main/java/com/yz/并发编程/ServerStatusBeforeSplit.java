@@ -11,10 +11,10 @@ import java.util.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@ThreadSafe
 public class ServerStatusBeforeSplit {
-    public final Set<String> users;
-    public final Set<String> queries;
+    @GuardedBy("this") public final Set<String> users;
+    @GuardedBy("this") public final Set<String> queries;
 
     public ServerStatusBeforeSplit() {
         users = new HashSet<String>();

@@ -8,9 +8,9 @@ package com.yz.并发编程;
  * @author Brian Goetz and Tim Peierls
  */
 
-
+@ThreadSafe
 public class Sequence {
-    private int nextValue;
+    @GuardedBy("this") private int nextValue;
 
     public synchronized int getNext() {
         return nextValue++;

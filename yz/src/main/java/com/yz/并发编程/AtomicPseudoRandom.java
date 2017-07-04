@@ -1,6 +1,8 @@
 package com.yz.并发编程;
 
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.*;
+
+
 
 /**
  * AtomicPseudoRandom
@@ -9,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@ThreadSafe
 public class AtomicPseudoRandom extends PseudoRandom {
     private AtomicInteger seed;
 

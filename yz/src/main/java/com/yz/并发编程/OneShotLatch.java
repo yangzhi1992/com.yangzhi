@@ -11,7 +11,7 @@ import java.util.concurrent.locks.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@ThreadSafe
 public class OneShotLatch {
     private final Sync sync = new Sync();
 

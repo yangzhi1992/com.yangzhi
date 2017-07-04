@@ -1,8 +1,9 @@
 package com.yz.并发编程;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.regex.Pattern;
+import java.util.*;
+import java.util.regex.*;
+
+
 
 /**
  * AttributeStore
@@ -11,9 +12,9 @@ import java.util.regex.Pattern;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@ThreadSafe
 public class AttributeStore {
-    private final Map<String, String>
+    @GuardedBy("this") private final Map<String, String>
             attributes = new HashMap<String, String>();
 
     public synchronized boolean userLocationMatches(String name,

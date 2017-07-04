@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@ThreadSafe
 public class LinkedQueue <E> {
 
     private static class Node <E> {

@@ -9,7 +9,7 @@ package com.yz.并发编程;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+@ThreadSafe
 public class StripedMap {
     // Synchronization policy: buckets[n] guarded by locks[n%N_LOCKS]
     private static final int N_LOCKS = 16;

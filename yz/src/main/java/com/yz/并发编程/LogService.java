@@ -17,8 +17,8 @@ public class LogService {
     private final BlockingQueue<String> queue;
     private final LoggerThread loggerThread;
     private final PrintWriter writer;
-    private boolean isShutdown;
-    private int reservations;
+    @GuardedBy("this") private boolean isShutdown;
+    @GuardedBy("this") private int reservations;
 
     public LogService(Writer writer) {
         this.queue = new LinkedBlockingQueue<String>();
