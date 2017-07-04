@@ -1,4 +1,4 @@
-package com.yz.multithreading.semaphore;
+package com.yz.multithread.semaphore;
 
 import java.util.concurrent.Semaphore;
 

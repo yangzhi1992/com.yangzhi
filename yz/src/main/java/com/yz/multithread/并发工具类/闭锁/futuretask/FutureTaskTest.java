@@ -1,4 +1,4 @@
-package com.yz.multithreading.并发工具类.闭锁.futuretask;
+package com.yz.multithread.并发工具类.闭锁.futuretask;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;

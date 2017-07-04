@@ -1,4 +1,4 @@
-package com.yz.multithreading.并发工具类.闭锁.countdownlatch;
+package com.yz.multithread.并发工具类.闭锁.countdownlatch;
 
 import java.util.concurrent.*;
 
