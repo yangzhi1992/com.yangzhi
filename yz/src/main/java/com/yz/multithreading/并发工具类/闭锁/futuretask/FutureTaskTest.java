@@ -1,6 +1,10 @@
-package com.yz.并发编程;
+package com.yz.multithreading.并发工具类.闭锁.futuretask;
 
-import java.util.concurrent.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
+
+import com.yz.并发编程.LaunderThrowable;
 
 /**
  * Preloader
@@ -10,9 +14,9 @@ import java.util.concurrent.*;
  * @author Brian Goetz and Tim Peierls
  */
 
-public class Preloader {
+public class FutureTaskTest {
 	public static void main(String[] args) throws DataLoadException, InterruptedException {
-		final Preloader p = new Preloader();
+		final FutureTaskTest p = new FutureTaskTest();
 		p.start();
 		
 		Thread t0  = new Thread(new Runnable(){

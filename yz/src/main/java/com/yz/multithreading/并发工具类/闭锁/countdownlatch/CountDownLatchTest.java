@@ -1,4 +1,4 @@
-package com.yz.并发编程;
+package com.yz.multithreading.并发工具类.闭锁.countdownlatch;
 
 import java.util.concurrent.*;
 
@@ -9,9 +9,9 @@ import java.util.concurrent.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-public class TestHarness {
+public class CountDownLatchTest {
 	public static void main(String[] args) throws InterruptedException {
-		TestHarness th = new TestHarness();
+		CountDownLatchTest th = new CountDownLatchTest();
 		long time = th.timeTasks(2, new Runnable(){
 			@Override
 			public void run() {
