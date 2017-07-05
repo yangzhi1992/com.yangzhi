@@ -4,7 +4,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
-import com.yz.并发编程.LaunderThrowable;
+import com.yz.concurrent.LaunderThrowable;
 
 /**
  * Preloader
