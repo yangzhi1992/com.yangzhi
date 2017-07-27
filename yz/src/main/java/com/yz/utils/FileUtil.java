@@ -341,21 +341,27 @@ public class FileUtil {
 	}
 
 	/**
-	 * 获取某个目录下所有的文件的全路径和文件名的集合；
-	 * 
+	 * 获取某个目录下所有的文件的全路径和文件名的集合
+	 * @param mulu
 	 * @return
 	 */
 	public List<String> getAllFile(String mulu) {
 		File file = new File(mulu);
 		File[] files = file.listFiles();
-		List<String> allFilePath = new ArrayList<String>();
-		for (int i = 0; i < files.length; i++) {
-			if (files[i].isDirectory()) {
-				getAllFile(files[i].toString());
+		
+		if(files == null || files.length <= 0){
+			return null;
+		}
+		
+		List<String> allFilePath = new ArrayList<String>();	
+		for (File fileInfo : files) {
+			if (fileInfo.isDirectory()) {
+				getAllFile(fileInfo.toString());
 			}else{
-				allFilePath.add(files[i].toString());
+				allFilePath.add(fileInfo.toString());
 			}
 		}
+		
 		return allFilePath;
 	}
 	
@@ -368,13 +374,12 @@ public class FileUtil {
 			if (!file.exists())
 				return null;
 			is = new FileInputStream(filePath);
-			String line; // 用来保存每行读取的内容
+			String line;
 			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), code));
-			line = reader.readLine(); // 读取第一行
-			while (line != null) { // 如果 line 为空说明读完了
-				list.add(line); // 将读到的内容添加到 buffer 中
-				// buffer.append("\n"); // 添加换行符
-				line = reader.readLine(); // 读取下一行
+			line = reader.readLine();
+			while (line != null) {
+				list.add(line);
+				line = reader.readLine();
 			}
 			reader.close();
 			is.close();
