@@ -10,12 +10,12 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.Map;
 
 public class FileUtil {
-
+	Map<String,List<String>> map = new HashMap();
 	// /**
 	// * 获取获取系统根目录下xml文件的路径的方法；
 	// */
@@ -384,41 +384,60 @@ public class FileUtil {
 		return list;
 	}
 	
-	public static Integer readToList(String filePath, String str ,String code) {
-		InputStream is;
+	/**
+	 * 统计文件中出现  关键字 的个数及关键字所在行的内容
+	 * @param filePath
+	 * @param str
+	 * @param code
+	 * @return
+	 */
+	public static Integer readToCount(String filePath, String str ,String code) {
 		Integer count = 0;
+		BufferedReader reader = null;
+		
 		try {
 			File file = new File(filePath);
-			if (!file.exists())
+			if (!file.exists()){
 				return null;
-			is = new FileInputStream(filePath);
-			String line;
-			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file),"GBK"));
+			}
+			
+			String line = null;
+			reader = new BufferedReader(new InputStreamReader(new FileInputStream(file),code));
 			
 			while ((line = reader.readLine()) != null) {
 				if(line.contains(str)){
+					System.out.println(line);
 					count ++;
 				}
 			}
-			reader.close();
-			is.close();
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally{
+			try {
+				if(reader != null){
+					reader.close();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 		return count;
 	}
 
 	public static void main(String[] args) {
 		FileUtil fu = new FileUtil();
-		List<String> list = fu.getAllFile("D://opt//tuniu//logs//tomcat//app//tomcat_app_base_IS_UNDEFINED");
+		List<String> list = fu.getAllFile("D://opt//tuniu//logs//tomcat//app1//tomcat_app_base_IS_UNDEFINED");
 		if(list == null || list.isEmpty()){
 			return;
 		}
 		Integer totalcount = 0;
 		for(String str : list){
-			Integer count = fu.readToList(str, "七彩返回班次",null);
+//			Integer count = fu.readToList(str, "\"return\":552",null);//xc query city is not success
+//			Integer count = fu.readToList(str, "七彩推送到数据中心",null);携程推送数据中心数据\"return\":194
+			Integer count = fu.readToCount(str, "\"return\":194","GBK");//936+7522/7=1000   146 43702 28846
 			System.out.println("count:"+count);
 			totalcount = totalcount + count;
+	
 		}
 		System.out.println("totalcount:"+totalcount);
 	}
