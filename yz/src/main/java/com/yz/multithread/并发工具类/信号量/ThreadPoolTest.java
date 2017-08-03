@@ -1,4 +1,4 @@
-package com.yz.multithread.semaphore;
+package com.yz.multithread.并发工具类.信号量;
 
 import java.util.concurrent.Semaphore;
 

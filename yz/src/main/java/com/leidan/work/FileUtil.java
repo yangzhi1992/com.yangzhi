@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.math.BigDecimal;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -91,11 +92,13 @@ public class FileUtil {
 				return null;
 			}
 			
+			
 			String line = null;
 			reader = new BufferedReader(new InputStreamReader(new FileInputStream(file),code));
 			
-			while ((line = reader.readLine()) != null) {
-				if(line.startsWith("00")){
+			while ((line = reader.readLine()) != null) { 
+				String str = new String(line.getBytes("ISO-8859-1"), "GBK");//add
+				if(str.startsWith("清算日期") ||line.startsWith("00")){
 					linelist.add(line);
 				}
 			}
@@ -130,32 +133,41 @@ public class FileUtil {
 		StringBuffer tempStr = new StringBuffer();
 		List<String> listStr = new ArrayList();
 		
-		for(String line : lineList){
-			tempStr.delete(0,tempStr.length());  
-			
-			String[] tempLine = line.split(" ");
-			for(String s : tempLine){
-				if("".equals(s) || "\t".equals(s)){
-					continue;
-				}else{
-					tempStr.append(s+",");
+		String oneLine = null;//add
+		int i = 0;//add
+		
+		for(String line : lineList){			
+			tempStr.delete(0,tempStr.length());
+			if(i==0){
+				oneLine = line;
+			}else{
+				String[] tempLine = line.split(" ");
+				for(String s : tempLine){
+					if("".equals(s) || "\t".equals(s)){
+						continue;
+					}else{
+						tempStr.append(s+",");
+					}
 				}
+				String[] tempLine2 = tempStr.toString().split(",");
+				totalLendAmount = totalLendAmount.add(new BigDecimal(tempLine2[3].replace("\t", "")));
+				totalLoanAmount = totalLoanAmount.add(new BigDecimal(tempLine2[4].replace("\t", "")));
+				
+				String brhNo = tempLine2[1].replace("\t", "");                 //8位-不需处理
+				String brhName = getBrhName(tempLine2[2].replace("\t", ""));//String.format("%-30s", tempLine2[2].replace("\t", ""));//getBrhName(tempLine2[2].replace("\t", ""));   //30位-需要处理
+				String lendAmount = String.format("%16s", tempLine2[3].replace("\t", "")); //16位-需要处理
+				String loanAmount = String.format("%16s", tempLine2[4].replace("\t", "")); //16位-需要处理
+				listStr.add(brhNo+" "+brhName+" "+lendAmount+" "+loanAmount);
 			}
-			
-			String[] tempLine2 = tempStr.toString().split(",");
-			totalLendAmount = totalLendAmount.add(new BigDecimal(tempLine2[3].replace("\t", "")));
-			totalLoanAmount = totalLoanAmount.add(new BigDecimal(tempLine2[4].replace("\t", "")));
-			
-			String brhNo = tempLine2[1].replace("\t", "");                 //8位-不需处理
-			String brhName = getBrhName(tempLine2[2].replace("\t", ""));//String.format("%-30s", tempLine2[2].replace("\t", ""));//getBrhName(tempLine2[2].replace("\t", ""));   //30位-需要处理
-			String lendAmount = String.format("%16s", tempLine2[3].replace("\t", "")); //16位-需要处理
-			String loanAmount = String.format("%16s", tempLine2[4].replace("\t", "")); //16位-需要处理
-			
-			listStr.add(brhNo+" "+brhName+" "+lendAmount+" "+loanAmount);
+			i++;
 		}
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		String date = sdf.format(new Date());
+		//add
+		String regex = "[^x00-xff]";
+		oneLine = oneLine.replaceAll(regex, "");
+		String dateFrom = oneLine.substring(0, 8);
+		String dateTo = oneLine.substring(8, 16);
+		//add
 		
 		String toFileRoot = "D://";
 		String toFileName = "core1006";
@@ -165,7 +177,7 @@ public class FileUtil {
 			file.delete();
 		}
 		
-		WriteFile(date+"|"+totalLendAmount+"|"+totalLoanAmount, toFileRoot, toFileName,"ISO-8859-1");
+		WriteFile(dateFrom+"|"+dateTo+"|"+totalLendAmount+"|"+totalLoanAmount, toFileRoot, toFileName,"ISO-8859-1");
 		for(String str : listStr){
 			WriteFile(str, "D://", "core1006","ISO-8859-1");
 		}
@@ -229,7 +241,17 @@ public class FileUtil {
 	}
 
 	public static void main(String[] args) {
-		FileUtil fu = new FileUtil();
-		fu.doWork();
+		//FileUtil fu = new FileUtil();
+		//fu.doWork();
+		String date = "2017-01-02";
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		try {
+			System.out.println(sdf.parse(date));
+			SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy/MM/dd");
+			System.out.println(sdf2.format(sdf.parse(date)));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
