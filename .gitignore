@@ -1,0 +1,6 @@
+/yz/target/classes/com/yz/并发编程/*.class
+*.class
+*.properties
+*.classpath
+*.prefs
+并发编程

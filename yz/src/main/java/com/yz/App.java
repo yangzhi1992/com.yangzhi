@@ -1,6 +1,12 @@
 package com.yz;
 
-import org.apache.commons.lang3.StringUtils;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
+
 
 /**
  * Hello world!
@@ -10,14 +16,23 @@ public class App
 {
     public static void main( String[] args )
     {
-    	System.out.println("s"+StringUtils.EMPTY+"d");
-       String str = "1   2    3";
-       char[] cs = str.toCharArray();
-       for(char c : cs){
-    	   System.out.println("a"+c+"b");
-    	   if(c == ' '){
-    		   System.out.println("dd");
-    	   }
-       }
+    	
+    	ThreadLocal tl = new ThreadLocal<>();
+    	List list = new ArrayList();
+    	List list2 = Collections.synchronizedList(list);
+    	list2.add("dd");
+    	
+    	AtomicLong al = new AtomicLong();
+    	al.addAndGet(1);
+    	al.set(0);
+    	
+    	AtomicInteger ai = new AtomicInteger();
+    	ai.set(0);
+    	
+    	Executors.newFixedThreadPool(2);
+    	Executors.newCachedThreadPool();
+    	Executors.newSingleThreadExecutor();
+    	Executors.newScheduledThreadPool(100);
+    	
     }
 }
