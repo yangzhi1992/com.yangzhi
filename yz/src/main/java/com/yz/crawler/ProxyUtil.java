@@ -31,7 +31,7 @@ public class ProxyUtil {
     public static boolean checkProxy(String ip, Integer port){  
         try {  
             //http://1212.ip138.com/ic.asp 可以换成任何比较快的网页  
-            Jsoup.connect("http://json.cn/")  
+            Jsoup.connect("http://1212.ip138.com/ic.asp")  
                     .timeout(3*1000)  
                     .proxy(ip, port)  
                     .get(); 
