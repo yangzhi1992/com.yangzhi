@@ -358,10 +358,6 @@ public class PageAnalysisServiceImpl{
                     if (map.size() == 2) {
                         break w;
                     }
-                } else {
-                    //有的网站ip是放到一起的 123.123.123.123：80
-                    map.put("ip", i);
-                    map.put("port", i);
                 }
             }
         }
