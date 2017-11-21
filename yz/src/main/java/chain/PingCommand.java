@@ -1,4 +1,4 @@
-package tuniu.chain;
+package chain;
 
 import org.apache.commons.chain.Command;
 import org.apache.commons.chain.Context;
