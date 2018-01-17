@@ -8,21 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Snippet {
 	
 	public static void main(String[] args) throws InterruptedException {
-		/*String chromePath="C:\\Users\\yangzhi2\\git\\com.yangzhi1\\yz\\src\\main\\java\\yzets\\chromedriver.exe";
-		System.setProperty("webdriver.chrome.driver", chromePath);
-        WebDriver driver = new ChromeDriver();
-        
-		String url = "http";
-		driver.get(url);
-		driver.findElement(By.className("username")).sendKeys("用户名");
-		driver.findElement(By.className("password")).sendKeys("123456");
-		
-		driver.findElement(By.className("btn")).click();
-		
-		System.out.println(driver.getCurrentUrl());
-		driver.quit();*/
-		
-		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");  
+		/*System.setProperty("webdriver.chrome.driver", "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.exe");  
 	    WebDriver driver = new ChromeDriver();  
        
         driver.get("http://baidu.com");  
@@ -37,7 +23,30 @@ public class Snippet {
 	     //btn1.click();  
 	    System.out.println("Page title is:"+driver.getTitle());  
 	      //Sleep(2000);  
-	    driver.close();  
+	    driver.close();  */
+		
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.exe");  
+	    WebDriver driver = new ChromeDriver();  
+       
+        driver.get("https://www.oschina.net/home/login?goto_page=http%3A%2F%2Fwww.oschina.net%2F");  
+        WebElement username = driver.findElement(By.xpath(".//*[@id='userMail']"));  
+	    CharSequence[] cs = new CharSequence[1];  
+	    cs[0]="18255305960";  
+	    username.sendKeys(cs); 
+	    
+	    WebElement password = driver.findElement(By.xpath(".//*[@id='userPassword']"));  
+	    CharSequence[] cs1 = new CharSequence[1];  
+	    cs1[0]="ya157156";  
+	    password.sendKeys(cs1);   
+	       
+	    WebElement btn = driver.findElement(By.className("btn-login"));  
+	    btn.click();  
+	    // WebElement btn1 = driver.findElement(By.xpath(".//*[@id='w-75cn8k']/div/h2/a[1]"));  
+	     //btn1.click();  
+	    System.out.println("Page title is:"+driver.getTitle());  
+	    Thread.sleep(2000*10);
+	    driver.close();
 	}
 	/**
 	# -*- coding: utf-8 -*-
