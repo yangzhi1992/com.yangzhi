@@ -3,7 +3,7 @@ package com.yz.utils;
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
 
-public class DefaultValueSetter {
+public class ClassSetter {
 	/**
 	 * 设置默认值
 	 * @param object
@@ -30,5 +30,12 @@ public class DefaultValueSetter {
 			} catch (Exception e) {
 			}
 		}
+	}
+	
+	/**
+	 * 
+	 */
+	public static<T> void doForClassFields(T object,String field){
+		
 	}
 }
