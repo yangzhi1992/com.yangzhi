@@ -8,8 +8,6 @@ import org.slf4j.LoggerFactory;
 /**
  * 令牌限流逻辑
  *
- * @author yuweixiang
- * @version $ Id: TokenBucket.java, v 0.1 16/9/14 下午3:28 yuweixiang Exp $
  */
 public class TokenBucket {
 
