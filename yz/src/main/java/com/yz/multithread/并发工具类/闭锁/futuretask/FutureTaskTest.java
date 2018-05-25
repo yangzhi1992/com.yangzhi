@@ -24,7 +24,7 @@ public class FutureTaskTest {
 			public void run() {
 				try {
 					p.get();
-				} catch (DataLoadException | InterruptedException e) {
+				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
