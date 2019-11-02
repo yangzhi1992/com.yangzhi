@@ -6,7 +6,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
 						http://www.springframework.org/schema/util     http://www.springframework.org/schema/util/spring-util-3.1.xsd
 						http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd">
-	<context:component-scan base-package="tuniu"/>
+	<context:component-scan base-package="chain"/>
 
 	<bean name="pingPongChain" class="org.apache.commons.chain.impl.ChainBase">
 		<constructor-arg>
@@ -17,13 +17,13 @@
 		</constructor-arg>
 	</bean>
 
-	<bean name="pingCommand" class="tuniu.PingCommand">
+	<bean name="pingCommand" class="chain.PingCommand">
 		<constructor-arg value="ping" />
 	</bean>
 
-	<bean name="pongCommand" class="tuniu.PongCommand">
+	<bean name="pongCommand" class="chain.PongCommand">
 		<constructor-arg value="pong" />
 	</bean>
 
-	<bean id="chainRunner" class="tuniu.ChainRunner" />
+	<bean id="chainRunner" class="chain.ChainRunner" />
 </beans>
