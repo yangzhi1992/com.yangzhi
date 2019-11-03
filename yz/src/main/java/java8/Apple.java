@@ -4,9 +4,18 @@ public class Apple {
     private int weight = 0;
     private String color = "";
 
+    public Apple() {
+    }
+
     public Apple(int weight, String color) {
         this.weight = weight;
         this.color = color;
+    }
+
+    public Apple(Integer integer) {
+    }
+
+    public Apple(String s, Integer integer) {
     }
 
     public static boolean isGreenApple(Apple apple) {
