@@ -1,7 +1,11 @@
 package java8.java05;
 
+import java8.Dish;
+
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Java5_5 {
     public static void main(String[] args) {
@@ -85,5 +89,31 @@ public class Java5_5 {
         Optional<Transaction> smallestTransaction2 =
                 transactions.stream()
                         .min(Comparator.comparing((Transaction::getValue)));
+
+        List<Dish> menu = Dish.menu;
+        //映射到数值流
+        int calories = menu.stream()  //返回一个Stream<Dish>
+                .mapToInt(Dish::getCalories) //返回一个IntStream
+                .sum();
+
+        //转化为对象流
+        IntStream intStream = menu.stream().mapToInt(Dish::getCalories); //将Stream 转化为数值流
+        Stream<Integer> stream = intStream.boxed(); //将数值流转化为Stream
+
+        //
+        OptionalInt maxCalories = menu.stream()
+                .mapToInt(Dish::getCalories)
+                .max();
+        int max = maxCalories.orElse(1);
+
+        IntStream evenNumbers = IntStream.rangeClosed(1, 100) //一个1-100的偶数流
+                .filter(n -> n % 2 == 0);
+
+        System.out.println(evenNumbers.count()); //1-100有50个偶数
+
+        Stream.iterate(new int[]{0, 1}, t -> new int[]{t[1], t[0] + t[1]}).limit(10).map(t -> t[0])
+                .forEach(
+                        System.out::println
+                );
     }
 }

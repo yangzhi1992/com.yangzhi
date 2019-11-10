@@ -5,7 +5,10 @@
 	<groupId>com</groupId>
 	<artifactId>yz</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<modules>
+		<module>com-prometheus</module>
+	</modules>
+	<packaging>pom</packaging>
 
 	<name>yz</name>
 	<url>http://maven.apache.org</url>
