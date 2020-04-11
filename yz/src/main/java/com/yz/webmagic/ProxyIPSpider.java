@@ -1,6 +1,5 @@
 package com.yz.webmagic;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.yz.utils.FileUtil;
@@ -9,7 +8,6 @@ import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Request;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.processor.PageProcessor;
-import us.codecraft.webmagic.selector.Html;
 
 public class ProxyIPSpider implements PageProcessor {
 

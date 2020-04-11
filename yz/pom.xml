@@ -8,6 +8,8 @@
 	<modules>
 		<module>com-prometheus</module>
         <module>com-elasticsearch</module>
+        <module>com-grok</module>
+        <module>com-utils</module>
     </modules>
 	<packaging>pom</packaging>
 

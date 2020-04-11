@@ -1,6 +1,5 @@
 package com.yz.multithread.current.ex2;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class Work{

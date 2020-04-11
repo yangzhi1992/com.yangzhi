@@ -1,8 +1,6 @@
 package com.yz.multithread.simpledateformat;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class SdfThreadTest{
 	public static void main(String[] args) throws InterruptedException {
