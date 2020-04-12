@@ -12,5 +12,11 @@
     <groupId>com.utils</groupId>
     <artifactId>com.utils</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.googlecode.aviator</groupId>
+            <artifactId>aviator</artifactId>
+            <version>4.2.10</version>
+        </dependency>
+    </dependencies>
 </project>

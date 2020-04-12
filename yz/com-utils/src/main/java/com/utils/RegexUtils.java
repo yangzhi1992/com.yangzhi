@@ -21,4 +21,8 @@ public class RegexUtils {
         sql = matcher.replaceAll("your_table");
         System.out.println(sql);
     }
+
+    public static void main(String[] args) {
+        RegexUtils.replacePlaceholder();
+    }
 }
