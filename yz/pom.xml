@@ -10,6 +10,7 @@
         <module>com-elasticsearch</module>
         <module>com-grok</module>
         <module>com-utils</module>
+        <module>com-thread</module>
     </modules>
 	<packaging>pom</packaging>
 

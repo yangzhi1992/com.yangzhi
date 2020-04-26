@@ -26,7 +26,7 @@ public class Snippet {
 	    driver.close();  */
 		
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.exe");  
+		System.setProperty("webdriver.chrome.driver", "D:\\tools\\chromedriver.exe");
 	    WebDriver driver = new ChromeDriver();  
        
         driver.get("https://www.oschina.net/home/login?goto_page=http%3A%2F%2Fwww.oschina.net%2F");  
