@@ -11,6 +11,7 @@
         <module>com-grok</module>
         <module>com-utils</module>
         <module>com-thread</module>
+        <module>com-javatree</module>
     </modules>
 	<packaging>pom</packaging>
 
